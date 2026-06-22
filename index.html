@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WD TAMPUNG</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+html, body{
+    height:auto;
+    min-height:100%;
+}
+
+body{
+    background:url("bg/gambar1.jpg") center/cover no-repeat;
+    color:#fff;
+    overflow-x:hidden;
+	overflow-y:auto;
+	display:block;
+	min-height:100vh;
+	padding:40px 20px;
+}
+
+body::after{
+    content:"";
+    display:block;
+    height:120px;
+}
+
+
+.container{
+    width:100%;
+    max-width:900px;
+    margin:0 auto;
+    min-height:0;
+    padding-bottom:300px;
+	min-height:calc(100vh + 200px);
+}
+
+
+.title{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+	font-family:'Orbitron',sans-serif;
+    font-size:34px;
+    font-weight:800;
+    color:#ffffff;
+    letter-spacing:2px;
+    text-align:center;
+    margin-bottom:2px;
+    font-family:'Orbitron',sans-serif;
+
+    text-shadow:
+        0 0 10px rgba(59,130,246,0.25);
+}
+
+.title-logo{
+    width:55px;
+    height:55px;
+}
+
+
+.box{
+
+    background:rgba(12,18,32,.80);
+
+    backdrop-filter:blur(14px);
+
+    border:1px solid rgba(96,165,250,.25);
+
+    border-radius:18px;
+
+    padding:14px;
+
+    margin-bottom:14px;
+
+    box-shadow:
+
+    0 4px 25px rgba(0,0,0,.35);
+
+}
+
+.input-box{
+    margin-top:18px;
+}
+
+textarea{
+
+width:100%;
+
+background:#081220;
+
+color:white;
+
+padding:14px;
+
+border-radius:14px;
+
+border:1px solid rgba(96,165,250,.2);
+
+outline:none;
+
+font-size:14px;
+
+line-height:1.5;
+
+resize:none;
+
+text-align:center;
+
+}
+
+.settings input,
+.settings select{
+
+background:#081220;
+
+color:white;
+
+font-size:14px;
+
+font-weight:600;
+
+border:1px solid rgba(96,165,250,.25);
+
+transition:.3s;
+
+}
+
+
+.settings input:focus,
+.settings select:focus{
+
+border-color:#38bdf8;
+
+box-shadow:
+
+0 0 10px rgba(56,189,248,.4);
+
+}
+
+#input{
+    height:160px;
+}
+
+#input2{
+    margin:0;
+    padding:4px 8px;
+
+    font-size:14px;      
+    font-weight:normal;  
+    line-height:1.3;
+
+    color:#fff;
+    text-align:center;
+
+    white-space:pre-wrap;
+    word-break:break-word;
+
+    display:inline-block;
+    width:100%;
+}
+
+.settings{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.settings input,
+.settings select{
+    flex:1;
+    min-width:150px;
+    padding:10px;
+    border-radius:10px;
+    border:1px solid #2b5cff;
+    background:linear-gradient(135deg,#ffffff 0%,#f8f8f8 35%,#e9e9e9 70%,#ffffff 100%);
+    color:black;
+    text-align:center;
+    font-weight:bold;
+}
+
+
+button{
+    width:100%;
+    padding:12px;
+    margin-top:1px;
+	margin-bottom:10px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(135deg,#2563eb,#38bdf8);
+    color:#fff;
+    font-weight:bold;
+    cursor:pointer;
+    position:relative;
+    overflow:hidden;
+}
+
+button::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:40%;
+    height:100%;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,0.4),transparent);
+    transform:skewX(-25deg);
+    animation:shineMove 2.5s linear infinite;
+}
+
+
+@keyframes shineMove{
+    0%{ left:-120%; }
+    100%{ left:150%; }
+}
+
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:10px;
+	font-size:14px;
+}
+
+th,td{
+    border:1px solid #2b5cff;
+    padding:8px;
+    text-align:center;
+}
+
+td{
+    background:#0b1220;
+}
+
+th{
+    background:linear-gradient(135deg,#ffffff 0%,#f8f8f8 35%,#e9e9e9 70%,#ffffff 100%);
+    color:#111;
+}
+
+
+.footer-brand{
+    margin-top:14px;
+
+    display:block;
+    width:fit-content;
+
+    margin-left:auto;
+    margin-right:auto;
+
+    font-size:9px;
+
+    font-weight:600;
+    letter-spacing:0.6px;
+
+    color:rgba(255,255,255,0.9);
+
+    padding:2px 6px;   
+
+    border-radius:6px;
+
+    border:1px solid rgba(96,165,250,0.25);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:0 6px 18px rgba(0,0,0,0.2);
+	text-shadow:
+    0 1px 2px rgba(0,0,0,0.8),
+    0 0 8px rgba(255,255,255,0.15);
+}
+
+.output-title{
+    text-align:center;
+
+    font-size:13px;
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    color:#60a5fa;
+
+    margin-bottom:10px;
+
+    text-transform:uppercase;
+
+    text-shadow:
+        0 0 10px rgba(96,165,250,.35);
+}
+
+.btn-group2{
+    display:flex;
+    gap:10px;
+    margin-top:10px;
+    width:100%;
+}
+
+.btn-group2 button{
+    flex:1;
+    margin:0;
+}
+
+#excelBox{
+    display:none;
+}
+
+.output-row{
+    display:flex;
+    flex-direction:row;
+    gap:10px;
+    width:100%;
+}
+
+#output1, #output2{
+    flex:1;
+    white-space:pre-wrap;
+}
+
+/* PENTING: paksa tombol jadi BARIS SENDIRI */
+.button-row{
+    display:flex;
+    flex-direction:row;
+    gap:10px;
+    margin-top:10px;
+    width:100%;
+}
+
+/* tombol tidak boleh ikut parent flex lain */
+.button-row button{
+    flex:1;
+}
+
+.col-box{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+}
+
+.col-item{
+    display:flex;
+    flex-direction:column;
+}
+
+.col-item pre{
+    flex:1;
+
+    background:#081220;
+    padding:10px;
+
+    border-radius:12px;
+
+    border:1px solid rgba(96,165,250,.25);
+
+    white-space:pre-wrap;
+
+    min-height:180px;
+}
+
+.col-item button{
+    margin-top:10px;
+    width:100%;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="title">
+	<img src="bg/gambar3.png" alt="Logo" class="title-logo">
+        WD TAMPUNGAN
+    </div>
+	<div class="title-line"></div>
+
+<div class="box input-box">
+    <textarea id="input" placeholder="Masukkan Data. . ."></textarea>
+</div>
+
+
+
+
+<div class="box settings">
+    <input id="globalNama" placeholder="NAMA PENGIRIM">
+
+    <select id="globalBank">
+        <option value="">BANK</option>
+        <option>BCA</option>
+        <option>BRI</option>
+        <option>BNI</option>
+        <option>MANDIRI</option>
+    </select>
+
+    <select id="globalAdm">
+    <option value="0">TANPA ADM</option>
+    <option value="2500">2.500</option>
+    <option value="6500">6.500</option>
+</select>
+</div>
+
+<div class="box" id="excelBox" style="display:none;">
+
+    <div class="col-box">
+
+        <div class="col-item">
+            <pre id="output1"></pre>
+            <button id="copyBtn" onclick="copyData()">
+                COPY FORM
+            </button>
+        </div>
+
+        <div class="col-item">
+            <pre id="output2"></pre>
+            <button id="copyForm2Btn" onclick="copyForm2()">
+                COPY HASIL
+            </button>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="box" id="tableBox" style="display:none;">
+
+<table>
+
+<thead>
+<tr>
+    <th>BANK</th>
+    <th>NAMA PENGIRIM</th>
+    <th>TUJUAN</th>
+    <th>ADM</th>
+    <th>NOMINAL</th>
+</tr>
+</thead>
+
+<tbody id="list"></tbody>
+
+</table>
+
+</div>
+
+<div class="footer-brand">
+    © 2026 | BY YOGIK
+</div>
+
+</div>
+
+<script>
+let GLOBAL_HEADER = "SUNTIK DANA";
+
+function generate(){
+
+    const raw = document.getElementById("input").value;
+
+    // ID
+    const id = raw.split("\n")[0].trim();
+
+    // Nominal
+    const nominalMatch = raw.match(/([\d,.]+)\s+\d{1,3},?\d*\.\d+/);
+    const nominal = nominalMatch
+        ? nominalMatch[1].replace(/,/g,"")
+        : "0";
+
+    // Bank, Rekening, Nama
+    const rekMatch = raw.match(/(BCA|BRI|BNI|MANDIRI)\s*,\s*(\d+)\s*,\s*(.+)/i);
+
+    const bank = rekMatch ? rekMatch[1].toUpperCase() : "";
+    const norek = rekMatch ? rekMatch[2] : "";
+    const nama = rekMatch ? rekMatch[3].trim() : "";
+
+    DATA = {
+        id,
+        bank,
+        norek,
+        nama,
+        nominal
+    };
+
+    document.getElementById("excelBox").style.display = "none";
+
+    updateOutput2();
+}
+
+function copyData(){
+
+    const raw = document.getElementById("input").value;
+    const lines = raw.split('\n').map(v => v.trim());
+
+    const id = lines[0] || "";
+
+    const wd = lines[1] || "";
+    const kolom = wd.split(/\s+/);
+    const nominal = kolom[3] || "";
+
+    const rek = lines[3] || "";
+
+    let bank = "";
+    let norek = "";
+    let nama = "";
+
+    const pecah = rek.split(",");
+
+    if(pecah.length >= 3){
+        bank = pecah[0].trim().toUpperCase();
+        norek = pecah[1].trim();
+        nama = pecah[2].trim();
+    }
+
+    let hasil =
+`MINITOTO WD DARI TAMPUNG
+
+ID  : ${id}
+Nama Bank : ${bank}
+No Rek : ${norek}
+Nama Rek: ${nama}
+Nominal : ${nominal}
+`;
+
+    navigator.clipboard.writeText(hasil);
+
+    const btn = document.getElementById("copyBtn");
+
+    btn.innerText = "✓ TERCOPY";
+	btn.style.background = "linear-gradient(135deg,#16a34a,#22c55e)";
+
+    setTimeout(()=>{
+        btn.innerText = "COPY FORM";
+		btn.style.background = "";
+    },2000);
+}
+
+function updateOutput2(){
+	const box = document.getElementById("excelBox");
+
+    const raw = document.getElementById("input").value;
+
+    // ⛔ kalau kosong, jangan tampilkan apa-apa
+    if(raw.trim().length === 0){
+    document.getElementById("excelBox").style.display = "none";
+    return;
+}
+
+    const lines = raw.split('\n').map(v => v.trim());
+
+    const id = lines[0] || "";
+
+    const wd = lines[1] || "";
+    const kolom = wd.split(/\s+/);
+    const nominal = kolom[3] || "";
+
+    const rek = lines[3] || "";
+
+    let bank = "";
+    let norek = "";
+    let nama = "";
+
+    const pecah = rek.split(",");
+    if(pecah.length >= 3){
+        bank = pecah[0].trim().toUpperCase();
+        norek = pecah[1].trim();
+        nama = pecah[2].trim();
+    }
+
+    // BOX 1
+    document.getElementById("output1").textContent =
+`MINITOTO WD DARI TAMPUNG
+
+ID  : ${id}
+Nama Bank : ${bank}
+No Rek : ${norek}
+Nama Rek: ${nama}
+Nominal : ${nominal}`;
+
+    // BOX 2
+const namaPengirim = document.getElementById("globalNama").value.trim();
+const bankPengirim = document.getElementById("globalBank").value;
+const adm = parseInt(document.getElementById("globalAdm").value) || 0;
+
+// nominal khusus output2
+let nominal2 = nominal;
+
+// jika sudah isi nama pengirim dan pilih BCA
+if(namaPengirim && bankPengirim === "BCA"){
+    let n = parseInt(nominal.replace(/,/g,'')) || 0;
+    n += adm;
+    nominal2 = n.toLocaleString('en-US');
+}
+
+// HASIL DEFAULT
+let hasil2 =
+`MINITOTO WD DARI TAMPUNG
+
+${bank}
+ID : ${id}
+KE ${nama}
+${nominal}`;
+
+
+// jika sudah isi nama pengirim
+if(namaPengirim){
+
+    const tujuan = bankPengirim
+        ? `${bankPengirim} KE ${bank}`
+        : bank;
+
+    hasil2 =
+`MINITOTO WD DARI TAMPUNG
+
+${tujuan}
+ID : ${id}
+${namaPengirim} KE ${nama}
+${nominal2}`;
+}
+
+document.getElementById("output2").textContent = hasil2;
+
+    // ✅ tampilkan hanya jika ada data
+    document.getElementById("excelBox").style.display = "block";
+}
+
+function copyForm2(){
+document.getElementById("excelBox").style.display = "block";
+    const text = document.getElementById("output2").textContent;
+
+    navigator.clipboard.writeText(text);
+
+    const btn = document.getElementById("copyForm2Btn");
+
+    btn.innerText = "✓ TERCOPY";
+	btn.style.background = "linear-gradient(135deg,#16a34a,#22c55e)";
+
+    setTimeout(()=>{
+        btn.innerText = "COPY HASIL";
+		btn.style.background = "";
+    },2000);
+
+}
+
+window.addEventListener("DOMContentLoaded", function () {
+    const inputEl = document.getElementById("input");
+
+    inputEl.addEventListener("input", updateOutput2);
+    inputEl.addEventListener("paste", function () {
+        setTimeout(updateOutput2, 50);
+    });
+
+    // otomatis update kolom 2
+    document.getElementById("globalNama")
+        .addEventListener("input", updateOutput2);
+
+    document.getElementById("globalBank")
+        .addEventListener("change", updateOutput2);
+
+    document.getElementById("globalAdm")
+        .addEventListener("change", updateOutput2);
+});
+
+</script>
+
+</body>
+</html>
