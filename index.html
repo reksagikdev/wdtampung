@@ -589,8 +589,7 @@ const adm = parseInt(document.getElementById("globalAdm").value) || 0;
 // nominal khusus output2
 let nominal2 = nominal;
 
-// jika sudah isi nama pengirim dan pilih bank apa saja
-if(namaPengirim && bankPengirim){
+if(bankPengirim){
     let n = parseInt(nominal.replace(/,/g,'')) || 0;
     n += adm;
     nominal2 = n.toLocaleString('en-US');
